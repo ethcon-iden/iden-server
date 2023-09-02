@@ -440,16 +440,17 @@ export class UserService {
     const result = await this.mailerService.sendMail({
       to: email,
       from: '"IDEN" <june@trinitystudio.io.com>',
-      subject: '지갑 복구 암호키',
-      text: `본 메일은 웹3 지갑 계정 생성으로 발급된 복구 암호키입니다.
+      subject: 'IDEN Recovery Key',
+      text: `This is your recovery key for Iden In-App Wallet: ${splitKey}
 
-복구 암호키 : ${splitKey}
 
-[보안 팁]
-복구 암호키는 반드시 안전한 장소에 기록하거나 저장해주세요.
-다른 사람과 공유하지 말고 개인적으로 보관해주세요.
-복구 암호키를 분실하거나 유출될 경우 지갑에 접근하지 못할 수 있습니다.
-이메일을 사용해 암호키를 전송하는 것은 보안 상 취약할 수 있으므로 다른 방법으로 백업하는 것을 권장드립니다.`,
+[Security Tips]
+
+Please record or store your recovery passphrase in a secure location.
+Do not share it with anyone and keep it private.
+If you lose or expose your recovery passphrase, you may lose access to your wallet.
+Sending your recovery passphrase via email can be a security risk, so we recommend using an alternative method for backup.
+`,
     });
   }
 }
