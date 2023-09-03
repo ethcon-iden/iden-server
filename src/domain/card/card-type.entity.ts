@@ -24,7 +24,7 @@ export class CardType extends BaseEntity {
     example: '이 중에서 가장 잘 생긴 사람은?',
     description: '카드 질문',
   })
-  @MaxLength(33)
+  @MaxLength(100)
   @Column({ type: 'varchar', length: 100, nullable: true })
   question: string;
 

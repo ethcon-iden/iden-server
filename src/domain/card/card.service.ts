@@ -104,11 +104,7 @@ export class CardService {
       const MIN = 0.2;
 
       for (const candidate of card.candidates) {
-        (candidate as any).fillBoxRatio =
-          '' +
-          (selectRates.get(candidate) === null
-            ? 0
-            : selectRates.get(candidate) * (MAX - MIN) + MIN);
+        (candidate as any).fillBoxRatio = '' + Math.random();
       }
     }
   }
